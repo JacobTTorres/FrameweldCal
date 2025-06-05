@@ -16,7 +16,6 @@ function calculateWelds() {
     for (let key of ["leftLeg", "rightLeg", "topWeb", "bottomWeb"]) {
         let welds = 5;  // Default starting weld count
         let weldDist = (parts[key] - (welds * weldSize)) / (welds - 1 ); // Adjust spacing calculation
-console.log(weldDist)
         // Ensure correct spacing calculations
         while (weldDist > 30) {
             welds += 2;  // Increase welds by 2 at a time if spacing is too large
@@ -36,11 +35,11 @@ console.log(weldDist)
 
     // Bearing bar calculations (always starts at 3 welds)
     let bearingWelds = 3;
-    let bearingDist = (parts.bearingBar - (bearingWelds * weldSize)) / (bearingWelds + 1);
+    let bearingDist = (parts.bearingBar - (bearingWelds * weldSize)) / (bearingWelds - 1);
 
     while (bearingDist > 30) {
         bearingWelds += 1;
-        bearingDist = (parts.bearingBar - (bearingWelds * weldSize)) / (bearingWelds + 1);
+        bearingDist = (parts.bearingBar - (bearingWelds * weldSize)) / (bearingWelds - 1);
     }
 
     if (bearingWelds > 0) {
@@ -49,14 +48,14 @@ console.log(weldDist)
 
     // Support bar calculations (always starts at 3 welds)
     let supportWelds = 3;
-    let supportDist = (parts.supportBar - (supportWelds * weldSize)) / (supportWelds + 1);
+    let supportDist = (parts.supportBar - (supportWelds * weldSize)) / (supportWelds - 1);
 
     if (supportDist <= 9) {
         supportWelds -= 1;
     } else if (supportDist > 30) {
         while (supportDist > 30) {
             supportWelds += 2;
-            supportDist = (parts.supportBar - (supportWelds * weldSize)) / (supportWelds + 1);
+            supportDist = (parts.supportBar - (supportWelds * weldSize)) / (supportWelds - 1);
         }
     }
 
