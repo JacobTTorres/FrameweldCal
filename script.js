@@ -60,8 +60,10 @@ function calculateWelds() {
     }
 
     if (supportWelds > 0) {
-        results["supportBar"] = `Welds: ${supportWelds}, Distance between welds: ${supportDist.toFixed(4)} inches`; // Formatting update
-    }
+    results["supportBar"] = supportWelds < 3
+        ? `Welds: ${supportWelds}`
+        : `Welds: ${supportWelds}, Distance between welds: ${supportDist.toFixed(4)} inches`;
+}
 
     // Display results
     document.getElementById("result").innerHTML = Object.entries(results)
