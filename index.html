@@ -4,39 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frame Weld Calculation</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Weld Pattern Calculator</h1>
-    
-    <label for="weldSize">Weld Length:</label>
-    <select id="weldSize">
-        <option value="3">3 inches</option>
-        <option value="4">4 inches</option>
-        <option value="5">5 inches</option>
-        <option value="6">6 inches</option>
-    </select>
+    <div class="main">
+        <h1>Weld Pattern Calculator</h1>
+        <div class="form">
+            <label for="weldSize">Weld Length:</label>
+            <select id="weldSize">
+                <option value="3">3 inches</option>
+                <option value="4">4 inches</option>
+                <option value="5">5 inches</option>
+                <option value="6">6 inches</option>
+            </select>
+        
+            <label for="leftLeg">Left Leg Length:</label>
+            <input type="number" id="leftLeg">
+        
+            <label for="rightLeg">Right Leg Length:</label>
+            <input type="number" id="rightLeg">
+        
+            <label for="topWeb">Top Web Length:</label>
+            <input type="number" id="topWeb">
+        
+            <label for="bottomWeb">Bottom Web Length:</label>
+            <input type="number" id="bottomWeb">
+        
+            <label for="bearingBar">Bearing/Cooler Bar Length:</label>
+            <input type="number" id="bearingBar">
+        
+            <label for="supportBar">Support Bar Length:</label>
+            <input type="number" id="supportBar">
+        
+        </div>
 
-    <label for="leftLeg">Left Leg Length:</label>
-    <input type="number" id="leftLeg">
+        <button onclick="calculateWelds()">Calculate Welds</button>
 
-    <label for="rightLeg">Right Leg Length:</label>
-    <input type="number" id="rightLeg">
+        <p id="result"></p>        
+    </div>
 
-    <label for="topWeb">Top Web Length:</label>
-    <input type="number" id="topWeb">
-
-    <label for="bottomWeb">Bottom Web Length:</label>
-    <input type="number" id="bottomWeb">
-
-    <label for="bearingBar">Bearing/Cooler Bar Length:</label>
-    <input type="number" id="bearingBar">
-
-    <label for="supportBar">Support Bar Length:</label>
-    <input type="number" id="supportBar">
-
-    <button onclick="calculateWelds()">Calculate Welds</button>
-
-    <p id="result"></p>
 
     <script src="script.js"></script>
 </body>
