@@ -50,15 +50,6 @@ function calculateWelds() {
     let supportWelds = 3;
     let supportDist = (parts.supportBar - (supportWelds * weldSize)) / (supportWelds - 1);
 
-    if (supportDist <= 9) {
-        supportWelds -= 1;
-    } else if (supportDist > 30) {
-        while (supportDist > 30) {
-            supportWelds += 2;
-            supportDist = (parts.supportBar - (supportWelds * weldSize)) / (supportWelds - 1);
-        }
-    }
-
     if (supportWelds > 0) {
     results["supportBar"] = supportWelds < 3
         ? `Welds: ${supportWelds}`

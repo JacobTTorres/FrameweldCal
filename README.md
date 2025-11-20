@@ -31,3 +31,10 @@ Third step
         to or less than 9 we will subtract a weld. if its greater than 9 it will remain 3. if it is greater than 30 we will add
         2 more welds till its no longer greater than 30 inches
 # FrameweldCal
+
+
+# support bar cal
+        First find the distance of the overall length of the support bar
+
+        Second subtract the weld length of 2 of your welds to check if you need a 3rd weld.
+            to see if you need a third weld if the distance between your two welds is greater than or = to 9 you should add one weld 
